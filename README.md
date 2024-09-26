@@ -24,75 +24,30 @@ Developed by: Kalaiselvan J
 RegisterNumber:  212223080022
 
 ```
+
 ```
 import numpy as np
-```
-```
-x=np.array(eval(input()))
-```
-
-![image](https://github.com/user-attachments/assets/a3239f5c-f5ac-41f3-8687-ac0594f7989f)
-```
-y=y=np.array(eval(input()))
-```
-
-![image](https://github.com/user-attachments/assets/d4201cc9-2d94-4714-b3c4-50cf36514457)
-```
-xmean=np.mean(x)
-xmean
-```
-
-![image](https://github.com/user-attachments/assets/d7e46bb5-50ad-457e-b7e9-54ae0367542d)
-```
-ymean=np.mean(y)
-ymean
-```
-
-![image](https://github.com/user-attachments/assets/12b6cb5e-af87-4096-9544-3a2545fc9ec0)
-```
-num=0
-denom=0
-```
-```
-for i in range(len(x)):
-  num+=(x[i]-xmean)*(y[i]-ymean)
-  denom+=(x[i]-xmean)**2
-```
-```
-num
-```
-
-![image](https://github.com/user-attachments/assets/7dfbe70a-8187-4946-abd5-683784c70461)
-```
-denom
-```
-
-![image](https://github.com/user-attachments/assets/39dd9474-0063-4c0e-903a-428a2ea38880)
-```
-m=num/denom
-m
-```
-
-![image](https://github.com/user-attachments/assets/a201d40f-a3cb-464b-a892-72e75b2679ce)
-```
-b=ymean-m*xmean
-b
-```
-
-![image](https://github.com/user-attachments/assets/b353270f-601f-47b3-a77a-6cdde19f3008)
-```
-ypred=m*x+b
-ypred
-```
-
-![image](https://github.com/user-attachments/assets/c47cefbb-5b1c-4e1a-a1d5-01afbc4eb7b4)
-```
 import matplotlib.pyplot as plt
-```
-```
-plt.scatter(x,y)
-plt.plot(x,ypred,color='green')
-plt.show()
+X=np.array(eval(input()))
+Y=np.array(eval(input()))
+X_mean=np.mean(X)
+print(X_mean)
+Y_mean=np.mean(Y)
+print(Y_mean)
+num=0
+denum=0
+for i in range(len(X)):
+  num+=(X[i]-X_mean)*(Y[i]-Y_mean)
+  denum+=(X[i]-X_mean)**2
+m=num/denum
+print(m)
+b=Y_mean - m*X_mean
+print(b)
+Y_pred=m*X+b
+print(Y_pred)
+plt.scatter(X,Y,color='blue')
+plt.plot(X,Y_pred,color='yellow') 
+plt.show() 
 ```
 
 
@@ -110,7 +65,8 @@ plt.show()
 
 ## Output:
 
-![image](https://github.com/user-attachments/assets/3497e2a7-889a-4c96-a7b4-de00fd09cb15)
+![image](https://github.com/user-attachments/assets/36a60b0b-ff4e-4ad1-87c8-da148daea533)
+
 
 ## Result:
 Thus the univariate Linear Regression was implemented to fit a straight line using least squares using python programming.
