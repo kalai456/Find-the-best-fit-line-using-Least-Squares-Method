@@ -28,26 +28,48 @@ RegisterNumber:  212223080022
 ```
 import numpy as np
 import matplotlib.pyplot as plt
-X=np.array(eval(input()))
-Y=np.array(eval(input()))
-X_mean=np.mean(X)
-print(X_mean)
-Y_mean=np.mean(Y)
-print(Y_mean)
-num=0
-denum=0
+
+# Input data
+X = np.array(eval(input("Enter the X values as a list : ")))
+Y = np.array(eval(input("Enter the Y values as a list : ")))
+
+# Calculate the means
+X_mean = np.mean(X)
+print(f"Mean of X values: {X_mean}")
+
+Y_mean = np.mean(Y)
+print(f"Mean of Y values: {Y_mean}")
+
+# Initialize numerator and denominator for the slope calculation
+num = 0
+denum = 0
+
+# Loop through to calculate numerator and denominator
 for i in range(len(X)):
-  num+=(X[i]-X_mean)*(Y[i]-Y_mean)
-  denum+=(X[i]-X_mean)**2
-m=num/denum
-print(m)
-b=Y_mean - m*X_mean
-print(b)
-Y_pred=m*X+b
-print(Y_pred)
-plt.scatter(X,Y,color='blue')
-plt.plot(X,Y_pred,color='yellow') 
-plt.show() 
+    num += (X[i] - X_mean) * (Y[i] - Y_mean)
+    denum += (X[i] - X_mean) ** 2
+
+# Calculate slope (m)
+m = num / denum
+print(f"Slope (m) of the regression line: {m}")
+
+# Calculate intercept (b)
+b = Y_mean - m * X_mean
+print(f"Intercept (b) of the regression line: {b}")
+
+# Calculate predicted Y values
+Y_pred = m * X + b
+print(f"Predicted Y values: {Y_pred}")
+
+# Plot the data points and the regression line
+plt.scatter(X, Y, color='blue', label='Original data')
+plt.plot(X, Y_pred, color='yellow', label='Regression line')
+plt.xlabel('X values')
+plt.ylabel('Y values')
+plt.title('Linear Regression')
+plt.legend()
+plt.show()
+
 ```
 
 
@@ -65,7 +87,11 @@ plt.show()
 
 ## Output:
 
-![image](https://github.com/user-attachments/assets/92812728-408c-4e6c-a588-059ed89f99a8)
+![image](https://github.com/user-attachments/assets/861986b8-db78-4da9-8efe-f5bd8c1cc14a)
+
+![image](https://github.com/user-attachments/assets/0c462dbd-bede-4868-8d8d-0648e4b23698)
+
+
 
 
 
